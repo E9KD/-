@@ -1,0 +1,378 @@
+<!--
+ * @Company: Ling Xun
+ * @Author: Song
+ * @Date: 2019-09-09 09:20:33
+ * @LastEditTime: 2019-09-09 13:54:30
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>商品详情</title>
+        <link rel="stylesheet" href="../static/css/reset.css" />
+        <link rel="stylesheet" href="../static/css/comment.css" />
+        <script src="../static/js/comment.js"></script>
+        <style>
+            .content {
+                width: 94%;
+                margin: 0 auto;
+                margin-top: 4rem;
+            }
+            .a {
+                height: 2rem;
+            }
+            .logo {
+                width: 80%;
+                height: auto;
+                margin: 0 auto;
+                display: block;
+            }
+            .title {
+                font-size: 15px;
+                margin-top: 2rem;
+                font-weight: bolder;
+                width: 100%;
+                text-align: center;
+            }
+            .box {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+                align-items: center;
+                width: 94%;
+                padding: 1rem 3%;
+                background-color: #4086c9;
+                border-radius: 10px;
+                margin-top: 1rem;
+            }
+            .box .left {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 70%;
+            }
+            .box .left p {
+                color: #fff;
+                margin-top: 0.5rem;
+            }
+            .box .left :nth-child(1) {
+                font-size: 12px;
+            }
+            .box .left :nth-child(2) {
+                font-size: 20px;
+            }
+            .box .left :nth-child(3) {
+                font-size: 14px;
+            }
+            .box .right {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                width: 30%;
+            }
+            .box .right img {
+                width: 3rem;
+                height: auto;
+            }
+            .box .right p {
+                font-size: 13px;
+                color: #fff;
+                margin-top: 1rem;
+            }
+            /*  */
+            .list_box {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .list_box .left {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                align-items: flex-end;
+                height: 70px;
+                width: 40%;
+                margin-right: 1rem;
+            }
+            .list_box .left p {
+                font-size: 12px;
+                padding: 0px 10px;
+                color: #d0d0d0;
+            }
+            .list_box .right {
+                position: relative;
+                border-left: 1px solid #e5e5e5;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                height: 70px;
+                width: 60%;
+                color: #d0d0d0;
+                padding-left: 1rem;
+                /* padding-bottom: 20px; */
+            }
+            .list_box .right p {
+                padding: 0px 10px;
+            }
+            .imgbig {
+                width: 10px;
+                height: 10px;
+                left: -6px;
+            }
+            .img {
+                position: absolute;
+                top: 0px;
+                border-radius: 100%;
+                background-color: #ffffff;
+            }
+            .wuliu {
+                margin-top: 2rem;
+                margin-bottom: 3rem;
+            }
+            .errorbox {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                /* height: 10rem; */
+                padding: 1rem 5%;
+                background-color: #fff;
+                border-radius: 10px;
+                display: none;
+            }
+            .errorbox .title {
+                width: 100%;
+                text-align: center;
+                /* color: #fff; */
+            }
+            .errorbox .item {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid #eee;
+                padding: 1rem 0;
+                margin-top: 0.5rem;
+            }
+            .errorbox .item p {
+                font-size: 13px;
+                /* color: #fff; */
+            }
+            .errorbox .item input {
+                width: 15px;
+                height: 15px;
+            }
+            .submit {
+                background-color: #4086c9;
+                color: #fff;
+                width: 50%;
+                text-align: center;
+                padding: 0.5rem 0;
+                border-radius: 10px;
+                font-size: 14px;
+                margin: 0 auto;
+                margin-top: 3rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <img src="../static/image/goback.png" alt="" />
+            <p>溯源信息</p>
+            <img src="" alt="" />
+        </div>
+        <div class="content">
+            <div class="a"></div>
+            <!-- LOGO -->
+            <img src="../static/image/a8.png" alt="" class="logo" />
+            <!--  -->
+            <p class="title">燕之屋 干燕窝 200g</p>
+            <!--  -->
+            <div class="box">
+                <div class="left">
+                    <p>溯源码：781XQWS423D</p>
+                    <p>已查询</p>
+                    <p>2019年08月27日查询</p>
+                </div>
+                <div class="right" id="error">
+                    <img src="../static/image/a22.png" alt="" />
+                    <p>报错</p>
+                </div>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="wuliu">
+            <!-- 循环这个，第一次 -->
+            <div class="list_box">
+                <div class="left">
+                    <p style="color:#4c8ecc">2019年3月28日</p>
+                    <p style="font-size:12px;margin-top: .3rem;color:#4c8ecc">
+                        操作员：王三
+                    </p>
+                </div>
+                <div class="right">
+                    <img
+                        src="../static/image/dot.png"
+                        alt=""
+                        class="img imgbig"
+                    />
+                    <p style="color:#4c8ecc">派送中</p>
+                    <p style="font-size:12px;color:#4c8ecc">
+                        准备所需材料，完成准备工作。
+                    </p>
+                </div>
+            </div>
+            <!-- 第二次 -->
+            <div class="list_box">
+                <div class="left">
+                    <p style="color:#4c8ecc">2019年3月28日</p>
+                    <p style="font-size:12px;margin-top: .3rem;color:#4c8ecc">
+                        操作员：王三
+                    </p>
+                </div>
+                <div class="right">
+                    <img
+                        src="../static/image/dot.png"
+                        alt=""
+                        class="img imgbig"
+                    />
+                    <p style="color:#4c8ecc">派送中</p>
+                    <p style="font-size:12px;color:#4c8ecc">
+                        准备所需材料，完成准备工作。
+                    </p>
+                </div>
+            </div>
+            <!-- 第二次 -->
+            <div class="list_box">
+                <div class="left">
+                    <p style="color:#4c8ecc">2019年3月28日</p>
+                    <p style="font-size:12px;margin-top: .3rem;color:#4c8ecc">
+                        操作员：王三
+                    </p>
+                </div>
+                <div class="right">
+                    <img
+                        src="../static/image/dot.png"
+                        alt=""
+                        class="img imgbig"
+                    />
+                    <p style="color:#4c8ecc">派送中</p>
+                    <p style="font-size:12px;color:#4c8ecc">
+                        准备所需材料，完成准备工作。
+                    </p>
+                </div>
+            </div>
+            <!-- 第二次 -->
+            <div class="list_box">
+                <div class="left">
+                    <p style="color:#4c8ecc">2019年3月28日</p>
+                    <p style="font-size:12px;margin-top: .3rem;color:#4c8ecc">
+                        操作员：王三
+                    </p>
+                </div>
+                <div class="right">
+                    <img
+                        src="../static/image/dot.png"
+                        alt=""
+                        class="img imgbig"
+                    />
+                    <p style="color:#4c8ecc">派送中</p>
+                    <p style="font-size:12px;color:#4c8ecc">
+                        准备所需材料，完成准备工作。
+                    </p>
+                </div>
+            </div>
+            <!-- 第二次 -->
+            <div class="list_box">
+                <div class="left">
+                    <p style="color:#4c8ecc">2019年3月28日</p>
+                    <p style="font-size:12px;margin-top: .3rem;color:#4c8ecc">
+                        操作员：王三
+                    </p>
+                </div>
+                <div class="right">
+                    <img
+                        src="../static/image/dot.png"
+                        alt=""
+                        class="img imgbig"
+                    />
+                    <p style="color:#4c8ecc">派送中</p>
+                    <p style="font-size:12px;color:#4c8ecc">
+                        准备所需材料，完成准备工作。
+                    </p>
+                </div>
+            </div>
+            <!-- 第二次 -->
+            <div class="list_box">
+                <div class="left">
+                    <p style="color:#4c8ecc">2019年3月28日</p>
+                    <p style="font-size:12px;margin-top: .3rem;color:#4c8ecc">
+                        操作员：王三
+                    </p>
+                </div>
+                <div class="right">
+                    <img
+                        src="../static/image/dot.png"
+                        alt=""
+                        class="img imgbig"
+                    />
+                    <p style="color:#4c8ecc">派送中</p>
+                    <p style="font-size:12px;color:#4c8ecc">
+                        准备所需材料，完成准备工作。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="errorbox" id="errorbox">
+            <p class="title">上报问题</p>
+            <div class="item">
+                <p>该溯源码已被查询</p>
+                <input type="checkbox" id="a" class="check" />
+            </div>
+            <div class="item">
+                <p>溯源信息有误</p>
+                <input type="checkbox" id="b" class="check" />
+            </div>
+            <div class="item">
+                <p>溯源信息被盗用</p>
+                <input type="checkbox" id="c" class="check" />
+            </div>
+            <p class="submit" id="submit">提交</p>
+        </div>
+        <script>
+            // 报错弹出框
+            document.getElementById("error").addEventListener("click", () => {
+                console.log(123);
+                document.getElementById("errorbox").style.display = "block";
+            });
+
+            // 提交成功取消弹出层
+            document.getElementById("submit").addEventListener("click", () => {
+                document.getElementById("errorbox").style.display = "none";
+            });
+
+            // 选项卡点击变换
+            let tag = document.querySelectorAll(".check");
+            for (let i = 0; i < tag.length; i++) {
+                tag[i].addEventListener("click", () => {
+                    // 所有取消
+                    for (let j = 0; j < tag.length; j++) {
+                        tag[j].checked = false;
+                    }
+                    // 点击添加
+                    tag[i].checked = true;
+                    // 这个就是需要的index
+                    console.log(i);
+                });
+            }
+        </script>
+    </body>
+</html>

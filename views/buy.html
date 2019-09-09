@@ -1,0 +1,106 @@
+<!--
+ * @Company: Ling Xun
+ * @Author: Song
+ * @Date: 2019-09-09 09:20:33
+ * @LastEditTime: 2019-09-09 12:06:57
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>商品详情</title>
+        <link rel="stylesheet" href="../static/css/reset.css" />
+        <link rel="stylesheet" href="../static/css/comment.css" />
+        <script src="../static/js/comment.js"></script>
+        <style>
+            html {
+                background-color: #f7f7f7;
+            }
+            .head {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                width: 90%;
+                margin: 0 auto;
+                margin-top: 1rem;
+                padding: 2rem 2%;
+                background-color: #fff;
+                border-radius: 10px;
+            }
+            .head img {
+                width: 50%;
+                height: auto;
+            }
+            .head :nth-child(2) {
+                font-size: 20px;
+                font-weight: bolder;
+                margin-top: 1rem;
+            }
+            .head :nth-child(3) {
+                color: #fff;
+                font-size: 15px;
+                width: 30%;
+                text-align: center;
+                border-radius: 5px;
+                margin-top: 1rem;
+                padding: 0.5rem 0;
+                background-color: #4086c9;
+            }
+            .imagebox {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                width: 94%;
+                margin: 0 auto;
+                margin-bottom: 5rem;
+                margin-top: 2rem;
+            }
+            .imagebox img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="head">
+            <img src="../static/image/a2.png" alt="" />
+            <p>卫龙溯源中国旗舰店</p>
+            <p>进店逛逛</p>
+        </div>
+        <div class="imagebox">
+            <img src="../static/image/a3.png" alt="" />
+        </div>
+        <div class="tabbar">
+            <div class="item">
+                <img src="../static/image/icon1normal.png" alt="" />
+                <p>产品</p>
+            </div>
+            <div class="item">
+                <img src="../static/image/icon2normal.png" alt="" />
+                <p>溯源</p>
+            </div>
+            <div class="item">
+                <img src="../static/image/icon3active.png" alt="" />
+                <p>订购</p>
+            </div>
+        </div>
+        <script>
+            // tabbar挂载
+            for (
+                let i = 0;
+                i < document.querySelectorAll(".item").length;
+                i++
+            ) {
+                document
+                    .querySelectorAll(".item")
+                    [i].addEventListener("click", () => {
+                        TabBarChange(i);
+                    });
+            }
+        </script>
+    </body>
+</html>

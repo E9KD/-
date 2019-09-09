@@ -1,0 +1,111 @@
+<!--
+ * @Company: Ling Xun
+ * @Author: Song
+ * @Date: 2019-09-09 09:20:33
+ * @LastEditTime: 2019-09-09 11:14:49
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>商品详情</title>
+        <link rel="stylesheet" href="../static/css/reset.css" />
+        <link rel="stylesheet" href="../static/css/comment.css" />
+        <script src="../static/js/comment.js"></script>
+        <style>
+            .content {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+                align-items: center;
+                width: 94%;
+                margin: 0 auto;
+                margin-top: 4rem;
+            }
+            .item {
+                width: 48%;
+                background-color: #fff;
+                margin: 0 1%;
+                margin-top: 0.5rem;
+                border-radius: 10px;
+            }
+            .item img {
+                padding: 1rem 2.5%;
+                width: 95%;
+                height: auto;
+            }
+            .item p {
+                font-size: 14px;
+                font-weight: bolder;
+                margin-top: 1rem;
+            }
+            .mark {
+                position: fixed;
+                top: 0;
+                left: 0px;
+                width: 100vw;
+                height: 100vh;
+                background-color: #999;
+            }
+            .mark img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 70%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <img src="../static/image/goback.png" alt="" />
+            <p>商家资质</p>
+            <img src="" alt="" />
+        </div>
+
+        <!--  -->
+        <div class="content">
+            <div class="item">
+                <img src="../static/image/a6.png" alt="" />
+                <p>营业执照</p>
+            </div>
+            <div class="item">
+                <img src="../static/image/a6.png" alt="" />
+                <p>营业执照</p>
+            </div>
+            <div class="item">
+                <img src="../static/image/a6.png" alt="" />
+                <p>营业执照</p>
+            </div>
+        </div>
+
+        <!-- MARK -->
+        <div class="mark" id="mark" style="display: none">
+            <img src="../static/image/a6.png" alt="" />
+        </div>
+
+        <script>
+            // 点击关闭遮蔽层
+            let tag = document.getElementById("mark");
+            tag.addEventListener("click", () => {
+                tag.style.display = "none";
+            });
+            // 点击放大显示
+            for (
+                let i = 0;
+                i < document.querySelectorAll(".item").length;
+                i++
+            ) {
+                document
+                    .querySelectorAll(".item")
+                    [i].addEventListener("click", () => {
+                        // 只是打开遮蔽层，你还需要修改链接
+                        tag.style.display = "block";
+                    });
+            }
+        </script>
+    </body>
+</html>

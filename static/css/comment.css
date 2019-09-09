@@ -1,0 +1,52 @@
+/* TABBAR */
+.tabbar {
+    display: flex;
+    flex-flow: roe nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #fff;
+    height: 5rem;
+    z-index: 999;
+}
+.item {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+.item img {
+    width: 2rem;
+    height: 2rem;
+}
+.item p {
+    font-size: 12px;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+    padding: 0 3%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
+    height: 4rem;
+    z-index: 999;
+}
+.navbar img {
+    width: 10px;
+    height: 15px;
+}
+.navbar p {
+    font-size: 15px;
+}
