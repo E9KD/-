@@ -2,7 +2,7 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-09 14:20:27
+ * @LastEditTime: 2019-09-10 14:24:12
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -75,32 +75,98 @@
             }
             .markbox {
                 background-color: #fff;
-                width: 70%;
-                padding: 2rem 5%;
+                width: 75%;
+                /* padding: 2rem 5%; */
                 padding-bottom: 4rem;
                 position: fixed;
-                top: 50%;
+                top: 40%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: 999;
+                border-radius: 10px;
+                overflow: hidden;
             }
-            .markbox .title {
+            .markbox .suc {
                 font-size: 15px;
-                width: 100%;
+                width: 94%;
                 text-align: center;
                 font-weight: bolder;
+                background-color: #fee0b4;
+                height: 3rem;
+                padding: 3rem 3%;
+                padding-bottom: 4rem;
+                color: #fe6512;
+                position: relative;
             }
-            .markbox .text {
+            .markbox .err {
+                width: 94%;
+                height: 3rem;
+                padding: 3rem 3%;
+                padding-bottom: 4rem;
+
+                position: relative;
+                background-color: #b2d7fb;
+            }
+            .markbox .err p {
+                color: #4086c9;
+                font-size: 15px;
+                font-weight: bolder;
+                text-align: center;
+                z-index: 9888;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+            }
+            .markbox .err img {
+                width: 70%;
+                position: absolute;
+                bottom: -1.3rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+            .textbox {
+                width: 94%;
+                padding: 0 3%;
+            }
+            .textbox .text {
+                font-size: 12px;
+                margin-top: 1rem;
+                color: #fe6512;
+            }
+            .errtextbox {
+                width: 94%;
+                padding: 0 3%;
+                position: relative;
+                margin-top: 2rem;
+            }
+            .errtextbox .text {
                 font-size: 13px;
                 margin-top: 1rem;
+                color: #4086c9;
+            }
+            .errtextbox img {
+                position: absolute;
+                bottom: -5rem;
+                right: -1rem;
+                width: 10rem;
+                height: 8rem;
+            }
+            .markbox .suc img {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translate(-50%, 0);
             }
             #click {
                 position: fixed;
-                bottom: 10%;
-                left: 0;
-                width: 100%;
-                color: #fff;
-                text-align: center;
+                bottom: 20%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 2rem;
             }
         </style>
     </head>
@@ -143,17 +209,43 @@
                 <p>订购</p>
             </div>
         </div>
+        <!-- 不成功 -->
         <div class="mark" id="mark">
             <div class="back"></div>
             <div class="markbox">
-                <p class="title">恭喜！该溯源码首次查询！</p>
-                <p class="text">溯源码：781XQWS423D</p>
-                <p class="text">溯源码：781XQWS423D</p>
-                <p class="text">溯源码：781XQWS423D</p>
-                <p class="text">溯源码：781XQWS423D</p>
+                <!-- 没成功 -->
+                <p class="suc">
+                    请注意！该溯源码已被查询！
+                    <br />
+                    请核实产品真伪！！
+                    <img src="../static/image/a24.png" alt="" />
+                </p>
+
+                <div class="textbox">
+                    <p class="text">溯源码：781XQWS423D</p>
+                    <p class="text">溯源码：781XQWS423D</p>
+                    <p class="text">溯源码：781XQWS423D</p>
+                    <p class="text">溯源码：781XQWS423D</p>
+                </div>
             </div>
-            <p id="click">轻触屏幕退出界面</p>
+            <div class="markbox" style="display:none">
+                <!-- 成功 -->
+                <div class="err">
+                    <p>恭喜！该溯源码为首次查询！<br />该产品为正品！</p>
+
+                    <img src="../static/image/a25.png" alt="" />
+                </div>
+                <div class="errtextbox">
+                    <img src="../static/image/a26.png" alt="" />
+                    <p class="text">溯源码：781XQWS423D</p>
+                    <p class="text">首次查询时间：2019年8月27日 14：55</p>
+                    <p class="text">该批次共：9500411枚</p>
+                    <p class="text">该溯源码为：第65</p>
+                </div>
+            </div>
+            <img src="../static/image/a27.png" alt="" id="click" />
         </div>
+
         <script>
             // tabbar挂载
             for (

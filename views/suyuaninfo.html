@@ -2,7 +2,7 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-09 13:54:30
+ * @LastEditTime: 2019-09-10 11:37:35
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -165,10 +165,7 @@
                 font-size: 13px;
                 /* color: #fff; */
             }
-            .errorbox .item input {
-                width: 15px;
-                height: 15px;
-            }
+
             .submit {
                 background-color: #4086c9;
                 color: #fff;
@@ -179,6 +176,14 @@
                 font-size: 14px;
                 margin: 0 auto;
                 margin-top: 3rem;
+            }
+            .check {
+                border: 1px solid #4086c9;
+                padding: 3px;
+                height: 8px;
+                width: 8px;
+                border-radius: 10rem;
+                height: auto;
             }
         </style>
     </head>
@@ -335,15 +340,16 @@
             <p class="title">上报问题</p>
             <div class="item">
                 <p>该溯源码已被查询</p>
-                <input type="checkbox" id="a" class="check" />
+                <!-- <input type="checkbox" id="a" class="check" /> -->
+                <img src="" alt="" class="check" />
             </div>
             <div class="item">
                 <p>溯源信息有误</p>
-                <input type="checkbox" id="b" class="check" />
+                <img src="" alt="" class="check" />
             </div>
             <div class="item">
                 <p>溯源信息被盗用</p>
-                <input type="checkbox" id="c" class="check" />
+                <img src="" alt="" class="check" />
             </div>
             <p class="submit" id="submit">提交</p>
         </div>
@@ -365,10 +371,10 @@
                 tag[i].addEventListener("click", () => {
                     // 所有取消
                     for (let j = 0; j < tag.length; j++) {
-                        tag[j].checked = false;
+                        tag[j].src = "";
                     }
                     // 点击添加
-                    tag[i].checked = true;
+                    tag[i].src = "../static/image/dot.png";
                     // 这个就是需要的index
                     console.log(i);
                 });

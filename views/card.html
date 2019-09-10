@@ -2,7 +2,7 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-09 11:14:49
+ * @LastEditTime: 2019-09-10 13:18:12
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -84,10 +84,15 @@
 
         <!-- MARK -->
         <div class="mark" id="mark" style="display: none">
-            <img src="../static/image/a6.png" alt="" />
+            <img src="" alt="" id="image" />
         </div>
 
         <script>
+            let list = [
+                "../static/image/a6.png",
+                "../static/image/a7.png",
+                "../static/image/a8.png"
+            ];
             // 点击关闭遮蔽层
             let tag = document.getElementById("mark");
             tag.addEventListener("click", () => {
@@ -103,6 +108,7 @@
                     .querySelectorAll(".item")
                     [i].addEventListener("click", () => {
                         // 只是打开遮蔽层，你还需要修改链接
+                        document.getElementById("image").src = list[i];
                         tag.style.display = "block";
                     });
             }

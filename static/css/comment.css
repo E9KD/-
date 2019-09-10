@@ -12,18 +12,18 @@
     height: 5rem;
     z-index: 999;
 }
-.item {
+.tabbar .item {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     padding: 5px 0;
 }
-.item img {
+.tabbar .item img {
     width: 2rem;
     height: 2rem;
 }
-.item p {
+.tabbar .item p {
     font-size: 12px;
     color: #333;
 }
