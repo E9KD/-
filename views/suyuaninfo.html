@@ -2,7 +2,7 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-11 13:07:08
+ * @LastEditTime: 2019-09-11 13:25:52
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -145,7 +145,7 @@
                 padding: 1rem 5%;
                 background-color: #fff;
                 border-radius: 10px;
-                display: none;
+                /* display: none; */
             }
             .errorbox .title {
                 width: 100%;
@@ -183,7 +183,15 @@
                 height: 8px;
                 width: 8px;
                 border-radius: 10rem;
-                height: auto;
+                /* height: auto; */
+            }
+            .errr {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                width: 100vw;
+                height: 100vh;
+                background-color: #eee;
             }
         </style>
     </head>
@@ -340,22 +348,24 @@
                 </div>
             </div>
         </div>
-        <div class="errorbox" id="errorbox">
-            <p class="title">上报问题</p>
-            <div class="item">
-                <p>该溯源码已被查询</p>
-                <!-- <input type="checkbox" id="a" class="check" /> -->
-                <img src="" alt="" class="check" />
+        <div class="errr" style="display: none" id="errorbox">
+            <div class="errorbox">
+                <p class="title">上报问题</p>
+                <div class="item">
+                    <p>该溯源码已被查询</p>
+                    <!-- <input type="checkbox" id="a" class="check" /> -->
+                    <img src="" alt="" class="check" />
+                </div>
+                <div class="item">
+                    <p>溯源信息有误</p>
+                    <img src="" alt="" class="check" />
+                </div>
+                <div class="item">
+                    <p>溯源信息被盗用</p>
+                    <img src="" alt="" class="check" />
+                </div>
+                <p class="submit" id="submit">提交</p>
             </div>
-            <div class="item">
-                <p>溯源信息有误</p>
-                <img src="" alt="" class="check" />
-            </div>
-            <div class="item">
-                <p>溯源信息被盗用</p>
-                <img src="" alt="" class="check" />
-            </div>
-            <p class="submit" id="submit">提交</p>
         </div>
         <script>
             // 报错弹出框
@@ -383,6 +393,13 @@
                     console.log(i);
                 });
             }
+
+            // 点击推出
+            document.getElementById("errorbox").addEventListener("click", e => {
+                if (e.target.id == "errorbox") {
+                    document.getElementById("errorbox").style.display = "none";
+                }
+            });
         </script>
     </body>
 </html>
