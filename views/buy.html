@@ -2,13 +2,13 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-10 11:42:55
+ * @LastEditTime: 2019-09-11 10:59:20
  -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>商品详情</title>
         <link rel="stylesheet" href="../static/css/reset.css" />
@@ -58,20 +58,45 @@
                 align-items: center;
                 width: 94%;
                 margin: 0 auto;
-                margin-bottom: 5rem;
+                margin-bottom: 3rem;
                 margin-top: 1rem;
             }
             .imagebox img {
                 width: 100%;
                 height: 100%;
             }
+            .mark {
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0px;
+                left: 0;
+            }
+            .mark p {
+                color: #fff;
+                white-space: nowrap;
+                padding: 0.5rem 5%;
+                border-radius: 10px;
+                background-color: #999;
+                text-align: center;
+                font-size: 15px;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
         </style>
     </head>
     <body>
+        <div class="mark animated " id="mark" style="display: none">
+            <div>
+                <p>该店铺暂未开通网上商城</p>
+            </div>
+        </div>
         <div class="head">
             <img src="../static/image/a2.png" alt="" />
             <p>卫龙溯源中国旗舰店</p>
-            <p>进店逛逛</p>
+            <p id="go">进店逛逛</p>
         </div>
         <div class="imagebox">
             <img src="../static/image/a28.png" alt="" />
@@ -103,6 +128,23 @@
                         TabBarChange(i);
                     });
             }
+
+            // 没有链接弹出toast
+            let url = "";
+            document.getElementById("go").addEventListener("click", e => {
+                if (url) return;
+
+                document.getElementById("mark").style.display = "block";
+
+                setTimeout(() => {
+                    document.getElementById("mark").style.display = "none";
+                }, 1500);
+            });
+
+            // 轻触推出toast
+            document.getElementById("mark").addEventListener("click", e => {
+                document.getElementById("mark").style.display = "none";
+            });
         </script>
     </body>
 </html>

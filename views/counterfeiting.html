@@ -2,13 +2,13 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-10 15:17:41
+ * @LastEditTime: 2019-09-11 11:23:34
  -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>防伪查询</title>
         <link rel="stylesheet" href="../static/css/reset.css" />
@@ -16,18 +16,17 @@
         <script src="../static/js/comment.js"></script>
         <style>
             body {
-                background: linear-gradient( to bottom, #ecfcff, #5edfff);
+                background: linear-gradient(to bottom, #ecfcff, #5edfff);
             }
             .box {
                 /* margin: 0 auto; */
                 padding: 0 2.5vw;
-                background-color: red;
-                margin-top: 4rem;
+                margin-top: 3rem;
                 width: 95vw;
-                height: 91vh;
+                /* height: 91vh; */
                 background: url("../static/image/a33.png") center center
                     no-repeat;
-                background-size: 97vw 91vh;
+                /* background-size: 97vw 91vh; */
             }
             .a {
                 height: 3rem;
@@ -111,7 +110,7 @@
         </div>
 
         <!--  -->
-        <div class="box">
+        <div class="box" id="box">
             <div class="a"></div>
             <img src="../static/image/a2.png" alt="" class="logo" />
             <img src="../static/image/a32.png" alt="" class="head" />
@@ -144,8 +143,34 @@
                     </p>
                 </div>
             </div>
+            <div class="content">
+                <img src="../static/image/a34.png" alt="" />
+                <div class="titlebox">
+                    <p class="title">溯源码信息</p>
+                    <p class="text">
+                        该批次商品共生成9500411枚溯源码，该溯源码为第654枚。
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <img src="../static/image/a34.png" alt="" />
+                <div class="titlebox">
+                    <p class="title">溯源码信息</p>
+                    <p class="text">
+                        该批次商品共生成9500411枚溯源码，该溯源码为第654枚。
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <script></script>
+        <script>
+            window.onload = () => {
+                // 高度修正
+                let tag = document.getElementById("box");
+                let height = tag.clientHeight + 70;
+                tag.style.height = height + "px";
+                tag.style["backgroundSize"] = "95vw" + " " + height + "px";
+            };
+        </script>
     </body>
 </html>

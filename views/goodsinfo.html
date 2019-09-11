@@ -2,13 +2,13 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-10 14:33:55
+ * @LastEditTime: 2019-09-11 10:40:34
  -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>商品详情</title>
         <link rel="stylesheet" href="../static/css/reset.css" />
@@ -20,7 +20,7 @@
                 flex-flow: column nowrap;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 5rem;
+                margin-bottom: 4rem;
             }
             .imagebox img {
                 width: 100%;
@@ -244,7 +244,7 @@
                     <p class="text">该溯源码为：第65</p>
                 </div>
             </div>
-            <img src="../static/image/a27.png" alt="" id="click" />
+            <!-- <img src="../static/image/a27.png" alt="" id="click" /> -->
         </div>
 
         <script>
@@ -262,7 +262,7 @@
             }
 
             // 轻触推出
-            document.getElementById("mark").addEventListener("click", () => {
+            document.getElementById("mark").addEventListener("click", e => {
                 document.getElementById("mark").style.display = "none";
             });
         </script>
