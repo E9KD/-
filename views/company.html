@@ -2,7 +2,7 @@
  * @Company: Ling Xun
  * @Author: Song
  * @Date: 2019-09-09 09:20:33
- * @LastEditTime: 2019-09-11 14:12:45
+ * @LastEditTime: 2019-09-11 15:13:15
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -39,17 +39,26 @@
                 border-radius: 10px;
                 z-index: 88;
                 border-radius: 10rem;
+                background-color: #fff;
             }
             .imgbox :nth-child(3) {
                 position: absolute;
-                top: 50%;
+                top: 53%;
                 left: 55%;
                 transform: translate(-50%, -50%);
-                width: 2rem;
-                height: 2rem;
+                width: 1.5rem;
+                height: 1.5rem;
                 border-radius: 10rem;
                 border-radius: 10px;
                 z-index: 99;
+            }
+            .imgbox p {
+                position: absolute;
+                top: 75%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                z-index: 999;
             }
             .head {
                 display: flex;
@@ -91,6 +100,13 @@
                 font-weight: bolder;
                 margin-top: 1rem;
             }
+            .back {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+            }
         </style>
     </head>
     <body>
@@ -104,17 +120,10 @@
             <!-- SHOPLOGO -->
             <div class="imgbox">
                 <img class="logo" src="../static/image/a40.png" alt="" />
-                <img src="../static/image/a33.png" alt="" />
+                <img src="../static/image/a10.png" alt="" />
                 <img src="../static/image/a41.png" alt="" />
-            </div>
-
-            <!--  -->
-            <div class="head">
-                <p>燕之屋</p>
-                <p>
-                    外以消费体验为中心，内以创造者为本
-                    <br />诚信经营，德行天下。
-                </p>
+                <p>中国科学院遥感应用研究所</p>
+                <img class="back" src="../static/image/a42.png" alt="" />
             </div>
 
             <!-- .CONTENT -->
